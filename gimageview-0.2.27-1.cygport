@@ -1,0 +1,22 @@
+inherit gnome2
+
+DESCRIPTION="GTK+ image viewer"
+HOMEPAGE="http://gtkmmviewer.sourceforge.net/"
+SRC_URI="mirror://sourceforge/gtkmmviewer/${P}.tar.gz"
+
+DIFF_EXCLUDES="intl m4 po config.rpath"
+
+src_compile() {
+	cd ${S}
+	rm -f m4/{{intl,lib}tool,pkg}.m4
+	gnome2_autoreconf
+
+	cd ${B}
+	gnome2_compile \
+		--enable-mplayer \
+		--enable-splash \
+		--with-gtk2 \
+		--with-xine
+}
+
+USE_DESTDIR=0

@@ -1,0 +1,5 @@
+category: Graphics Gnome
+requires: cygwin gdk-pixbuf2 glib2 gtk2-x11 libX11_6 libXext6 libbz2_1 libintl8 libjpeg62 libmng1 libpng12 librsvg2 libwmf027 libxine1 pango zlib
+sdesc: "GTK+ image viewer"
+ldesc: "GImageView is a yet another image viewer which solves hopless 
+situation of displaying a lot of images."

@@ -1,0 +1,127 @@
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x config.h.in -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in -x intl -x m4 -x po -x config.rpath origsrc/gimageview-0.2.27/Makefile.am src/gimageview-0.2.27/Makefile.am
+--- origsrc/gimageview-0.2.27/Makefile.am	2004-05-23 09:08:07.000000000 -0500
++++ src/gimageview-0.2.27/Makefile.am	2007-08-29 15:08:55.933006400 -0500
+@@ -2,6 +2,8 @@
+ 
+ SUBDIRS = doc etc m4 po intl lib src plugins
+ 
++ACLOCAL_AMFLAGS = -I m4
++
+ CLEANFILES = *~ .deps/* .*.swp .*.swo
+ 
+ endocdir = $(DESTDIR)$(gimv_docdir)/text/C
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x config.h.in -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in -x intl -x m4 -x po -x config.rpath origsrc/gimageview-0.2.27/configure.in src/gimageview-0.2.27/configure.in
+--- origsrc/gimageview-0.2.27/configure.in	2004-12-21 20:45:30.000000000 -0600
++++ src/gimageview-0.2.27/configure.in	2007-08-29 15:07:55.495893200 -0500
+@@ -55,11 +55,6 @@
+ AC_MSG_RESULT([$platform_win32])
+ AM_CONDITIONAL(PLATFORM_WIN32, test x"$platform_win32" = x"yes")
+ 
+-if test x"$platform_win32" = x"yes"; then
+-    WINDRES=windres
+-    AC_SUBST(WINDRES)
+-fi
+-
+ AC_MSG_CHECKING([for native Win32])
+ case "$host" in
+   *-*-mingw*)
+@@ -72,6 +67,10 @@
+ AC_MSG_RESULT([$os_win32])
+ AM_CONDITIONAL(OS_WIN32, test x"$os_win32" = x"yes")
+ 
++if test x"$os_win32" = x"yes"; then
++    WINDRES=windres
++    AC_SUBST(WINDRES)
++fi
+ 
+ dnl ******************************
+ dnl libtool
+@@ -484,9 +483,12 @@
+ dnl for gettext
+ dnl ******************************
+ ALL_LINGUAS="fr ja"
++GETTEXT_PACKAGE="gimageview"
+ AM_GNU_GETTEXT
++AM_GNU_GETTEXT_VERSION([0.15])
+ AC_CHECK_FUNC(gettext,,AC_CHECK_LIB(intl, gettext))
+ localedir="\${datadir}/locale"
++AC_SUBST(GETTEXT_PACKAGE)
+ AC_SUBST(localedir)
+ 
+ 
+@@ -614,7 +616,7 @@
+ if test x$CC = xgcc; then
+    CFLAGS="$CFLAGS -Wall"
+ fi	
+-if test x"$platform_win32" = xyes; then
++if test x"$os_win32" = xyes; then
+    LDFLAGS="$LDFLAGS -mwindows"
+ fi
+ 
+@@ -653,7 +655,7 @@
+ dnl ******************************
+ gimv_datadir="\${datadir}/\${PACKAGE}"
+ docdir="\${datadir}/doc"
+-gimv_docdir="\${docdir}/\${PACKAGE}"
++gimv_docdir="\${docdir}/\${PACKAGE}-\${VERSION}"
+ gimv_icondir="\${datadir}/\${PACKAGE}/pixmaps"
+ AC_SUBST(docdir)
+ AC_SUBST(gimv_datadir)
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x config.h.in -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in -x intl -x m4 -x po -x config.rpath origsrc/gimageview-0.2.27/lib/libexif/Makefile.am src/gimageview-0.2.27/lib/libexif/Makefile.am
+--- origsrc/gimageview-0.2.27/lib/libexif/Makefile.am	2004-05-23 09:07:36.000000000 -0500
++++ src/gimageview-0.2.27/lib/libexif/Makefile.am	2007-08-29 13:11:24.130935300 -0500
+@@ -6,7 +6,7 @@
+         -I$(top_srcdir) \
+         -I$(top_srcdir)/lib
+ 
+-CPPFLAGS= \
++AM_CPPFLAGS= \
+ 	-DGETTEXT_PACKAGE=PACKAGE \
+ 	-DLIBEXIF_LOCALEDIR=\""$(localedir)"\"
+ 
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x config.h.in -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in -x intl -x m4 -x po -x config.rpath origsrc/gimageview-0.2.27/plugins/image_loader/Makefile.am src/gimageview-0.2.27/plugins/image_loader/Makefile.am
+--- origsrc/gimageview-0.2.27/plugins/image_loader/Makefile.am	2004-05-23 09:08:16.000000000 -0500
++++ src/gimageview-0.2.27/plugins/image_loader/Makefile.am	2007-08-29 13:11:24.146569600 -0500
+@@ -68,7 +68,7 @@
+ 	-I$(top_srcdir) \
+ 	-I$(top_srcdir)/src
+ 
+-CPPFLAGS = \
++AM_CPPFLAGS = \
+ 	-DPLUGINDIR=\""$(plugindir)"\"
+ 
+ libgimv_bmp_loader_la_LIBADD = $(GTK_LIBS)
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x config.h.in -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in -x intl -x m4 -x po -x config.rpath origsrc/gimageview-0.2.27/plugins/image_view/Makefile.am src/gimageview-0.2.27/plugins/image_view/Makefile.am
+--- origsrc/gimageview-0.2.27/plugins/image_view/Makefile.am	2004-10-03 14:21:09.000000000 -0500
++++ src/gimageview-0.2.27/plugins/image_view/Makefile.am	2007-08-29 13:11:24.162203900 -0500
+@@ -18,7 +18,7 @@
+ gimv_mplayer_plugindir = $(DESTDIR)$(plugindir)/$(IMAGE_VIEW_PLUGIN_DIR)
+ gimv_xine_plugindir = $(DESTDIR)$(plugindir)/$(IMAGE_VIEW_PLUGIN_DIR)
+ 
+-CPPFLAGS= \
++AM_CPPFLAGS= \
+ 	-DDATADIR=\""$(gimv_datadir)"\"
+ 
+ INCLUDES = \
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x config.h.in -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in -x intl -x m4 -x po -x config.rpath origsrc/gimageview-0.2.27/src/Makefile.am src/gimageview-0.2.27/src/Makefile.am
+--- origsrc/gimageview-0.2.27/src/Makefile.am	2004-12-20 09:19:50.000000000 -0600
++++ src/gimageview-0.2.27/src/Makefile.am	2007-08-29 13:11:24.177838200 -0500
+@@ -81,7 +81,7 @@
+ EXTRA_gimv_SOURCES = \
+ 	gimv.ico
+ 
+-CPPFLAGS= \
++AM_CPPFLAGS= \
+ 	-DLOCALEDIR=\""$(localedir)"\" \
+ 	-DDATADIR=\""$(gimv_datadir)"\" \
+ 	-DDOCDIR=\""$(gimv_docdir)"\" \
+@@ -116,6 +116,9 @@
+ 	nm $(gimv_OBJECTS) | grep ' T _' | sed 's/.* T _//' >> gimv.def
+ 	nm $(gimv_OBJECTS) | grep ' D _' | sed 's/.* D _//' | sed "s/\$$/ DATA/" >> gimv.def
+ 
++endif
++
++if OS_WIN32
+ gimv_res = gimv.res
+ 
+ gimv.rc:

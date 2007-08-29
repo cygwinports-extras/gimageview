@@ -1,0 +1,239 @@
+gimageview
+-------------------------------------------
+GImageView is an image viewer which solves a hopless situation of
+displaying a lot of images.
+
+Runtime requirements:
+  cygwin-1.5.24-2
+  gdk-pixbuf2-2.10.14-1
+  glib2-2.12.13-1
+  gtk2-x11-2.10.14-1
+  libX11_6-1.1.3-1
+  libXext6-1.0.3-1
+  libbz2_1-1.0.3-2
+  libintl8-0.15-1
+  libjpeg62-6b-12
+  libmng1-1.0.10-1
+  libpng12-1.2.18-2
+  librsvg2-2.18.0-1
+  libwmf027-0.2.8.4-4
+  libxine1-1.1.7-1
+  pango-1.16.5-1
+  zlib-1.2.3-2
+
+Build requirements:
+(besides corresponding devel packages)
+  cygwin-1.5.24-2
+  autoconf2.5-2.61-1
+  automake1.8-1.8.5-3
+  binutils-20060817-1
+  cygport-0.3.5-1
+  gawk-3.1.5-4
+  gcc-core-3.4.4-3
+  intltool-0.35.5-1
+  libtool1.5-1.5.23a-2
+  make-3.81-1
+  pkg-config-0.21-1
+  sed-4.1.2-1
+
+Canonical homepage:
+  http://gtkmmviewer.sourceforge.net/
+
+Canonical download:
+  http://downloads.sourceforge.net/gtkmmviewer/
+
+-------------------------------------------
+
+Build instructions:
+  unpack gimageview-0.2.27-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./gimageview-0.2.27-X.cygport all
+
+This will create:
+  /usr/src/gimageview-0.2.27-X-src.tar.bz2
+  /usr/src/gimageview-0.2.27-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary package:
+
+  /usr/bin/gimv.exe
+  /usr/lib/gimageview/archiver/cyggimv_lha_extarc.dll
+  /usr/lib/gimageview/archiver/cyggimv_rar_extarc.dll
+  /usr/lib/gimageview/archiver/cyggimv_tar_extarc.dll
+  /usr/lib/gimageview/archiver/cyggimv_zip_extarc.dll
+  /usr/lib/gimageview/archiver/libgimv_lha_extarc.la
+  /usr/lib/gimageview/archiver/libgimv_rar_extarc.la
+  /usr/lib/gimageview/archiver/libgimv_tar_extarc.la
+  /usr/lib/gimageview/archiver/libgimv_zip_extarc.la
+  /usr/lib/gimageview/image_loader/cyggimv_bmp_loader.dll
+  /usr/lib/gimageview/image_loader/cyggimv_jpeg_loader.dll
+  /usr/lib/gimageview/image_loader/cyggimv_mag_loader.dll
+  /usr/lib/gimageview/image_loader/cyggimv_mng_loader.dll
+  /usr/lib/gimageview/image_loader/cyggimv_pcx_loader.dll
+  /usr/lib/gimageview/image_loader/cyggimv_pixbuf_loader.dll
+  /usr/lib/gimageview/image_loader/cyggimv_png_loader.dll
+  /usr/lib/gimageview/image_loader/cyggimv_rsvg_loader.dll
+  /usr/lib/gimageview/image_loader/cyggimv_tga_loader.dll
+  /usr/lib/gimageview/image_loader/cyggimv_wmf_loader.dll
+  /usr/lib/gimageview/image_loader/cyggimv_xbm_loader.dll
+  /usr/lib/gimageview/image_loader/cyggimv_xcf_loader.dll
+  /usr/lib/gimageview/image_loader/cyggimv_xvpics_loader.dll
+  /usr/lib/gimageview/image_loader/libgimv_bmp_loader.la
+  /usr/lib/gimageview/image_loader/libgimv_jpeg_loader.la
+  /usr/lib/gimageview/image_loader/libgimv_mag_loader.la
+  /usr/lib/gimageview/image_loader/libgimv_mng_loader.la
+  /usr/lib/gimageview/image_loader/libgimv_pcx_loader.la
+  /usr/lib/gimageview/image_loader/libgimv_pixbuf_loader.la
+  /usr/lib/gimageview/image_loader/libgimv_png_loader.la
+  /usr/lib/gimageview/image_loader/libgimv_rsvg_loader.la
+  /usr/lib/gimageview/image_loader/libgimv_tga_loader.la
+  /usr/lib/gimageview/image_loader/libgimv_wmf_loader.la
+  /usr/lib/gimageview/image_loader/libgimv_xbm_loader.la
+  /usr/lib/gimageview/image_loader/libgimv_xcf_loader.la
+  /usr/lib/gimageview/image_loader/libgimv_xvpics_loader.la
+  /usr/lib/gimageview/image_saver/cyggimv_png_saver.dll
+  /usr/lib/gimageview/image_saver/cyggimv_pnm_saver.dll
+  /usr/lib/gimageview/image_saver/cyggimv_xvpics_saver.dll
+  /usr/lib/gimageview/image_saver/libgimv_png_saver.la
+  /usr/lib/gimageview/image_saver/libgimv_pnm_saver.la
+  /usr/lib/gimageview/image_saver/libgimv_xvpics_saver.la
+  /usr/lib/gimageview/image_view/cyggimv_mplayer.dll
+  /usr/lib/gimageview/image_view/cyggimv_xine.dll
+  /usr/lib/gimageview/image_view/libgimv_mplayer.la
+  /usr/lib/gimageview/image_view/libgimv_xine.la
+  /usr/lib/gimageview/io_stream/cyggimv_bz_io.dll
+  /usr/lib/gimageview/io_stream/cyggimv_gzip_io.dll
+  /usr/lib/gimageview/io_stream/libgimv_bz_io.la
+  /usr/lib/gimageview/io_stream/libgimv_gzip_io.la
+  /usr/lib/gimageview/thumbnail/cyggimv_ee_thumb.dll
+  /usr/lib/gimageview/thumbnail/cyggimv_gqview_thumb.dll
+  /usr/lib/gimageview/thumbnail/cyggimv_konq_old_thumb.dll
+  /usr/lib/gimageview/thumbnail/cyggimv_konqueror_thumb.dll
+  /usr/lib/gimageview/thumbnail/cyggimv_nautilus-2.0_thumb.dll
+  /usr/lib/gimageview/thumbnail/cyggimv_nautilus_thumb.dll
+  /usr/lib/gimageview/thumbnail/cyggimv_thumb.dll
+  /usr/lib/gimageview/thumbnail/cyggimv_xvpics_thumb.dll
+  /usr/lib/gimageview/thumbnail/libgimv_ee_thumb.la
+  /usr/lib/gimageview/thumbnail/libgimv_gqview_thumb.la
+  /usr/lib/gimageview/thumbnail/libgimv_konq_old_thumb.la
+  /usr/lib/gimageview/thumbnail/libgimv_konqueror_thumb.la
+  /usr/lib/gimageview/thumbnail/libgimv_nautilus-2.0_thumb.la
+  /usr/lib/gimageview/thumbnail/libgimv_nautilus_thumb.la
+  /usr/lib/gimageview/thumbnail/libgimv_thumb.la
+  /usr/lib/gimageview/thumbnail/libgimv_xvpics_thumb.la
+  /usr/lib/gimageview/thumbnail_view/cyggimv_thumbview_detail.dll
+  /usr/lib/gimageview/thumbnail_view/libgimv_thumbview_detail.la
+  /usr/share/doc/Cygwin/gimageview-0.2.27.README
+  /usr/share/doc/gimageview-0.2.27/ABOUT-NLS
+  /usr/share/doc/gimageview-0.2.27/AUTHORS
+  /usr/share/doc/gimageview-0.2.27/COPYING
+  /usr/share/doc/gimageview-0.2.27/ChangeLog
+  /usr/share/doc/gimageview-0.2.27/HACKING
+  /usr/share/doc/gimageview-0.2.27/INSTALL
+  /usr/share/doc/gimageview-0.2.27/NEWS
+  /usr/share/doc/gimageview-0.2.27/README
+  /usr/share/doc/gimageview-0.2.27/TODO
+  /usr/share/doc/gimageview-0.2.27/html/ja/01.html
+  /usr/share/doc/gimageview-0.2.27/html/ja/02.html
+  /usr/share/doc/gimageview-0.2.27/html/ja/03.html
+  /usr/share/doc/gimageview-0.2.27/html/ja/04.html
+  /usr/share/doc/gimageview-0.2.27/html/ja/05.html
+  /usr/share/doc/gimageview-0.2.27/html/ja/06.html
+  /usr/share/doc/gimageview-0.2.27/html/ja/07.html
+  /usr/share/doc/gimageview-0.2.27/html/ja/changelog.html
+  /usr/share/doc/gimageview-0.2.27/html/ja/document.html
+  /usr/share/doc/gimageview-0.2.27/html/ja/gimageview.css
+  /usr/share/doc/gimageview-0.2.27/html/ja/gimv_faq.html
+  /usr/share/doc/gimageview-0.2.27/html/ja/gimv_history.html
+  /usr/share/doc/gimageview-0.2.27/html/ja/gimv_tips.html
+  /usr/share/doc/gimageview-0.2.27/html/ja/index.html
+  /usr/share/doc/gimageview-0.2.27/html/ja/todo.html
+  /usr/share/doc/gimageview-0.2.27/text/C/AUTHORS
+  /usr/share/doc/gimageview-0.2.27/text/C/COPYING
+  /usr/share/doc/gimageview-0.2.27/text/C/ChangeLog
+  /usr/share/doc/gimageview-0.2.27/text/C/HACKING
+  /usr/share/doc/gimageview-0.2.27/text/C/INSTALL
+  /usr/share/doc/gimageview-0.2.27/text/C/NEWS
+  /usr/share/doc/gimageview-0.2.27/text/C/README
+  /usr/share/doc/gimageview-0.2.27/text/C/TODO
+  /usr/share/doc/gimageview-0.2.27/text/ja/COPYING.ja
+  /usr/share/doc/gimageview-0.2.27/text/ja/ChangeLog.ja
+  /usr/share/doc/gimageview-0.2.27/text/ja/INSTALL.ja
+  /usr/share/doc/gimageview-0.2.27/text/ja/NEWS.ja
+  /usr/share/doc/gimageview-0.2.27/text/ja/README.ja
+  /usr/share/doc/gimageview-0.2.27/text/ja/TODO.ja
+  /usr/share/doc/gimageview-0.2.27/text/ja/gimageview.txt
+  /usr/share/gimageview/gtkrc
+  /usr/share/gimageview/mplayerrc
+  /usr/share/gimageview/pixmaps/default/alert.xpm
+  /usr/share/gimageview/pixmaps/default/archive.xpm
+  /usr/share/gimageview/pixmaps/default/back.xpm
+  /usr/share/gimageview/pixmaps/default/close.xpm
+  /usr/share/gimageview/pixmaps/default/dotfile.xpm
+  /usr/share/gimageview/pixmaps/default/eject.xpm
+  /usr/share/gimageview/pixmaps/default/ff.xpm
+  /usr/share/gimageview/pixmaps/default/folder-go.xpm
+  /usr/share/gimageview/pixmaps/default/folder-link-open.xpm
+  /usr/share/gimageview/pixmaps/default/folder-link.xpm
+  /usr/share/gimageview/pixmaps/default/folder-lock.xpm
+  /usr/share/gimageview/pixmaps/default/folder-open.xpm
+  /usr/share/gimageview/pixmaps/default/folder-up.xpm
+  /usr/share/gimageview/pixmaps/default/folder.xpm
+  /usr/share/gimageview/pixmaps/default/folder48.xpm
+  /usr/share/gimageview/pixmaps/default/forward.xpm
+  /usr/share/gimageview/pixmaps/default/fullscreen.xpm
+  /usr/share/gimageview/pixmaps/default/gimageview.xpm
+  /usr/share/gimageview/pixmaps/default/gimv_icon.xpm
+  /usr/share/gimageview/pixmaps/default/home.xpm
+  /usr/share/gimageview/pixmaps/default/image.xpm
+  /usr/share/gimageview/pixmaps/default/leftarrow.xpm
+  /usr/share/gimageview/pixmaps/default/nav_button.xpm
+  /usr/share/gimageview/pixmaps/default/next_t.xpm
+  /usr/share/gimageview/pixmaps/default/nfolder.xpm
+  /usr/share/gimageview/pixmaps/default/no_zoom.xpm
+  /usr/share/gimageview/pixmaps/default/paper.xpm
+  /usr/share/gimageview/pixmaps/default/pause.xpm
+  /usr/share/gimageview/pixmaps/default/play.xpm
+  /usr/share/gimageview/pixmaps/default/prefs.xpm
+  /usr/share/gimageview/pixmaps/default/prev_t.xpm
+  /usr/share/gimageview/pixmaps/default/question.xpm
+  /usr/share/gimageview/pixmaps/default/refresh.xpm
+  /usr/share/gimageview/pixmaps/default/resize.xpm
+  /usr/share/gimageview/pixmaps/default/rightarrow.xpm
+  /usr/share/gimageview/pixmaps/default/rotate.xpm
+  /usr/share/gimageview/pixmaps/default/rw.xpm
+  /usr/share/gimageview/pixmaps/default/search.xpm
+  /usr/share/gimageview/pixmaps/default/skip.xpm
+  /usr/share/gimageview/pixmaps/default/small_archive.xpm
+  /usr/share/gimageview/pixmaps/default/small_close.xpm
+  /usr/share/gimageview/pixmaps/default/small_home.xpm
+  /usr/share/gimageview/pixmaps/default/small_refresh.xpm
+  /usr/share/gimageview/pixmaps/default/small_up.xpm
+  /usr/share/gimageview/pixmaps/default/stop.xpm
+  /usr/share/gimageview/pixmaps/default/stop2.xpm
+  /usr/share/gimageview/pixmaps/default/up.xpm
+  /usr/share/gimageview/pixmaps/default/zoom.xpm
+  /usr/share/gimageview/pixmaps/default/zoom_fit.xpm
+  /usr/share/gimageview/pixmaps/default/zoom_in.xpm
+  /usr/share/gimageview/pixmaps/default/zoom_out.xpm
+  /usr/share/gnome/apps/Graphics/gimageview.desktop
+  /usr/share/locale/fr/LC_MESSAGES/gimageview.mo
+  /usr/share/locale/ja/LC_MESSAGES/gimageview.mo
+  /usr/share/pixmaps/gimv.png
+
+--------------------
+
+Port Notes:
+
+----- version 0.2.27-1 -----
+Version bump.  Enabled mplayer and xine plugins.
+
+----- version 0.2.26-1 -----
+Initial release for Cygwin.
+
+
+Cygwin port maintained by: Yaakov Selkowitz 
+http://sourceforge.net/projects/cygwin-ports/ 
